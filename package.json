@@ -1,0 +1,36 @@
+{
+  "name": "ultron-ai",
+  "version": "1.0.0",
+  "main": "index.js",
+   "scripts": {
+    "dev": "mastra dev",
+    "build": "mastra build && tsc",
+    "start": "node dist/webhook-handler.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^1.2.22",
+    "@mastra/core": "^0.10.15",
+    "@mastra/libsql": "^0.11.0",
+    "@mastra/loggers": "^0.10.3",
+    "@mastra/memory": "^0.11.3",
+    "@types/express": "^5.0.3",
+    "axios": "^1.10.0",
+    "axios-retry": "^4.5.0",
+    "express": "^5.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "mastra": "^0.10.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

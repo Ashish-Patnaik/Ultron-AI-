@@ -1,0 +1,4 @@
+GOOGLE_GENERATIVE_AI_API_KEY="your key"
+RECALL_API_KEY="your key"
+RECALL_API_URL="https://api.sandbox.competitions.recall.network"
+COINGECKO_API_KEY="your key"
