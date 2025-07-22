@@ -6,6 +6,13 @@ This system is designed to connect directly to **TradingView** for signal genera
 
 <br>
 
+## Demo
+
+
+https://github.com/user-attachments/assets/0ee0e890-3472-40ff-94af-c1a21390dc2c
+
+
+
 ## 🚀 Key Features
 
 - **Dual-Agent Intelligence:** Features two specialized agents, each with a unique purpose, providing both short-term tactical trading and long-term strategic management.
@@ -17,6 +24,7 @@ This system is designed to connect directly to **TradingView** for signal genera
 
 <br>
 <hr>
+
 
 ## 🧠 The Agents: A Tale of Two Brains
 
