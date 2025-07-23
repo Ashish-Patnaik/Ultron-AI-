@@ -1,0 +1,18 @@
+{
+  "run_interval_seconds": 30,
+  "trading_pair": {
+    "base_asset": "WETH",
+    "base_asset_id": "weth",
+    "quote_asset": "USDC"
+  },
+  "risk_parameters": {
+    "max_portfolio_risk_percent": 2,
+    "min_usdc_balance_percent": 25
+  },
+  "strategy_parameters": {
+    "rsi_period": 14,
+    "rsi_oversold": 85,
+    "rsi_overbought": 95,
+    "buy_confidence_threshold": 75
+  }
+}
