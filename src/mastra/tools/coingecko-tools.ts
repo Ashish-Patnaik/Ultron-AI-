@@ -83,6 +83,43 @@ export const calculateRsi = createTool({
   },
 });
 
+export const calculateBollingerBands = createTool({
+  id: "calculate-bollinger-bands",
+  description: "Calculates the Bollinger Bands (upper, middle, lower) for a given set of price data.",
+  inputSchema: z.object({
+    prices: z.array(z.number()).describe("An array of closing prices, from oldest to newest."),
+    period: z.number().default(20).describe("The look-back period for the bands, typically 20."),
+    stdDev: z.number().default(2).describe("The number of standard deviations, typically 2."),
+  }),
+  outputSchema: z.object({
+    upperBand: z.number(),
+    middleBand: z.number(), // This is the Simple Moving Average (SMA)
+    lowerBand: z.number(),
+  }),
+  execute: async ({ context }) => {
+    const { prices, period, stdDev } = context;
+    if (prices.length < period) {
+      throw new Error(`Not enough price data. Need at least ${period} prices, but got ${prices.length}.`);
+    }
+
+    const recentPrices = prices.slice(-period);
+    const middleBand = recentPrices.reduce((sum, price) => sum + price, 0) / period;
+    
+    const variance = recentPrices.reduce((sum, price) => sum + Math.pow(price - middleBand, 2), 0) / period;
+    const standardDeviation = Math.sqrt(variance);
+
+    const upperBand = middleBand + (standardDeviation * stdDev);
+    const lowerBand = middleBand - (standardDeviation * stdDev);
+
+    console.log(`Bollinger Bands: Upper=${upperBand}, Middle=${middleBand}, Lower=${lowerBand}`);
+    return {
+      upperBand: parseFloat(upperBand.toFixed(2)),
+      middleBand: parseFloat(middleBand.toFixed(2)),
+      lowerBand: parseFloat(lowerBand.toFixed(2)),
+    };
+  },
+});
+
 // NEW, CORRECTED VERSION
 export const getHistoricalCryptoPrices = createTool({
   id: "get-historical-crypto-prices",
