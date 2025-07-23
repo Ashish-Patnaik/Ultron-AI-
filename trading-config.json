@@ -6,7 +6,7 @@
     "quote_asset": "USDC"
   },
   "risk_parameters": {
-    "max_portfolio_risk_percent": 2,
+    "max_portfolio_risk_percent": 5,
     "min_usdc_balance_percent": 25
   },
   "strategy_parameters": {
