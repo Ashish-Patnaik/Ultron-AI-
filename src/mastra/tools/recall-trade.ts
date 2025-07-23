@@ -21,7 +21,7 @@ export const recallTrade = createTool({
       { fromToken, toToken, amount, reason },
       {
         headers: { Authorization: `Bearer ${RECALL_API_KEY}` },
-        timeout: 30_000,
+        timeout: 90_000,
       }
     );
  
