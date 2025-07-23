@@ -2,7 +2,7 @@ import { createTool } from "@mastra/core/tools";
 import axios from "axios";
 import { z } from "zod";
 
-const RECALL_API_URL = "https://api.competitions.recall.network";
+const RECALL_API_URL = process.env.RECALL_API_URL;
 const RECALL_API_KEY = process.env.RECALL_API_KEY;
 
 const recallApi = axios.create({
@@ -11,7 +11,7 @@ const recallApi = axios.create({
     Authorization: `Bearer ${RECALL_API_KEY}`,
     "Content-Type": "application/json",
   },
-  timeout: 30_000,
+  timeout: 90_000,
 });
 
 /**
